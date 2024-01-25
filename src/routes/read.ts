@@ -2,6 +2,9 @@ import express from 'express';
 import { Inventory } from '../models/inventory';
 
 const router = express.Router();
+router.get('/api/inventory/health', async (req, res) => {    
+    res.sendStatus(200)
+});
 
 router.get('/api/inventory/:id', async (req, res) => {
     const id = req.params.id
@@ -14,5 +17,7 @@ router.get('/api/inventory', async (req, res) => {
     
     res.send(inventory)
 });
+
+
 
 export { router as readRouter }
